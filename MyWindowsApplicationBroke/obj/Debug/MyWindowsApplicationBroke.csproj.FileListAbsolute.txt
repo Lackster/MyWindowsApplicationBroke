@@ -1,1 +1,2 @@
 c:\users\jproulx\documents\visual studio 2013\Projects\MyWindowsApplicationBroke\MyWindowsApplicationBroke\bin\Debug\MyWindowsApplicationBroke.exe.config
+C:\Users\jproulx\Desktop\MyWindowsApplicationBroke\MyWindowsApplicationBroke\bin\Debug\MyWindowsApplicationBroke.exe.config
