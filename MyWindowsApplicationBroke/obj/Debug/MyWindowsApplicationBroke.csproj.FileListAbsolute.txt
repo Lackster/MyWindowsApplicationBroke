@@ -1,2 +1,10 @@
 c:\users\jproulx\documents\visual studio 2013\Projects\MyWindowsApplicationBroke\MyWindowsApplicationBroke\bin\Debug\MyWindowsApplicationBroke.exe.config
 C:\Users\jproulx\Desktop\MyWindowsApplicationBroke\MyWindowsApplicationBroke\bin\Debug\MyWindowsApplicationBroke.exe.config
+C:\Users\jproulx\Desktop\MyWindowsApplicationBroke\MyWindowsApplicationBroke\obj\Debug\MyWindowsApplicationBroke.csprojResolveAssemblyReference.cache
+C:\Users\jproulx\Desktop\MyWindowsApplicationBroke\MyWindowsApplicationBroke\obj\Debug\MyWindowsApplicationBroke.Form1.resources
+C:\Users\jproulx\Desktop\MyWindowsApplicationBroke\MyWindowsApplicationBroke\obj\Debug\MyWindowsApplicationBroke.Properties.Resources.resources
+C:\Users\jproulx\Desktop\MyWindowsApplicationBroke\MyWindowsApplicationBroke\obj\Debug\MyWindowsApplicationBroke.csproj.GenerateResource.Cache
+C:\Users\jproulx\Desktop\MyWindowsApplicationBroke\MyWindowsApplicationBroke\bin\Debug\MyWindowsApplicationBroke.exe
+C:\Users\jproulx\Desktop\MyWindowsApplicationBroke\MyWindowsApplicationBroke\bin\Debug\MyWindowsApplicationBroke.pdb
+C:\Users\jproulx\Desktop\MyWindowsApplicationBroke\MyWindowsApplicationBroke\obj\Debug\MyWindowsApplicationBroke.exe
+C:\Users\jproulx\Desktop\MyWindowsApplicationBroke\MyWindowsApplicationBroke\obj\Debug\MyWindowsApplicationBroke.pdb

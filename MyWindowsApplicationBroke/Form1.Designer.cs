@@ -183,6 +183,7 @@
             this.textVisor.Name = "textVisor";
             this.textVisor.Size = new System.Drawing.Size(189, 35);
             this.textVisor.TabIndex = 13;
+            this.textVisor.TextChanged += new System.EventHandler(this.textVisor_TextChanged);
             // 
             // conversionBox
             // 
