@@ -15,10 +15,10 @@ namespace MyWindowsApplicationBroke
     {   
     //PH6545643684
         public string contents;
-        public double conversion1;
+        public double conversion1 = 0;
         public double conversion2;
         public Queue<string> symbolQueue;
-        public Queue<int> intQueue;
+        public Queue<double> intQueue;
         public int switchHolder;
         public bool secondSwapOn;
         public string lastSymbol;
@@ -51,102 +51,28 @@ namespace MyWindowsApplicationBroke
         private void Form1_Load(object sender, EventArgs e)
         {
             symbolQueue = new Queue<string>();
+            intQueue = new Queue<double>();
         }
 
         private void equalsSign_Click(object sender, EventArgs e)
         {
-            if (contents == null)
-            {
-                if (symbolQueue == null)
-                {
-                    try
-                    {
-
-
-                        if (lastSymbol == "+")
-                        {
-                            switchHolder = 1;
-                        }else if (lastSymbol == "-")
-                        {
-                            switchHolder = 2;
-                        }else if (lastSymbol == "x")
-                        {
-                            switchHolder = 3;
-                        }
-                        else if (lastSymbol == "/")
-                        {
-                            switchHolder = 4;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Sorry, but it seems that you haven't chose a function. Try again!");
-                            return;
-                        }
-                       
-
-                        switch (switchHolder)
-                        {
-                            case 1:
-                                conversion1 = conversion1 + conversion2;
-                                contents = conversion1.ToString();
-                             
-                                conversion2 = 0;
-                                break;
-                            case 2:
-                                conversion1 = conversion1 - conversion2;
-                                contents = conversion1.ToString();
-                     
-                                conversion2 = 0;
-                                break;
-                            case 3:
-                                conversion1 = conversion1 * conversion2;
-                                contents = conversion1.ToString();
-                           
-                                conversion2 = 0;
-                                break;
-                            case 4:
-                                if (conversion1 == 0)
-                                {
-                                    MessageBox.Show("You cannot divide by 0");
-                                }else if (conversion2 == 0)
-                                {
-                                    MessageBox.Show("You cannot divide by 0");
-                                }else
-                                {
-                                    conversion1 = conversion1 * conversion2;
-                                    contents = conversion1.ToString();
-                                //Symbol.
-                                    conversion2 = 0;
-                                }
-                                break;
-
-                        }
-                    }
-
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-
-
-                }
-            }
+         
+                  
         }
 
         private void numberTwo_Click(object sender, EventArgs e)
         {
-            if (conversion1 == null)
-            {
-                conversion1 = 2;
-                textVisor.Text = conversion1.ToString();
-                textVisor.Update();
-            }
-            else
-            {
-                conversion1 = conversion1 * 10 + 2;
-                textVisor.Text = conversion1.ToString();
-                textVisor.Update();
-            }
+           if (intQueue == null)
+           {
+               conversion1 = 2;
+               textVisor.Text = conversion1.ToString();
+               textVisor.Update();
+           }else if (intQueue != null)
+           {
+               conversion1 = conversion1 * 10 + 2;
+               textVisor.Text = conversion1.ToString();
+               textVisor.Update();
+           }
         }
 
         private void numberThree_Click(object sender, EventArgs e)
@@ -292,7 +218,11 @@ namespace MyWindowsApplicationBroke
         private void additionSign_Click(object sender, EventArgs e)
         {
             symbolQueue.Enqueue("+");
-            lastSymbol = "+";
+            intQueue.Enqueue(conversion1);
+            textVisor.Text = conversion1 + "+";
+            conversion1 = 0;
+           
+            
         }
 
         private void numberEight_Click(object sender, EventArgs e)
@@ -330,12 +260,14 @@ namespace MyWindowsApplicationBroke
                 conversion1 = 9;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
+                
             }
             else if (secondSwapOn == false)
             {
                 conversion1 = conversion1 * 10 + 9;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
+               
             }
             else if (secondSwapOn == true & conversion2 == null)
             {
@@ -355,6 +287,7 @@ namespace MyWindowsApplicationBroke
         {
             symbolQueue.Enqueue("-");
             lastSymbol = "-";
+            textVisor.Clear();
         }
 
         private void divisionSign_Click(object sender, EventArgs e)
