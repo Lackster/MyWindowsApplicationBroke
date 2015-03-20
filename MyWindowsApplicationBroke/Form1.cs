@@ -34,13 +34,13 @@ namespace MyWindowsApplicationBroke
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (conversion1 == null)
+            if (intQueue == null)
             {
                 conversion1 = 1;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
             }
-            else
+            else if (intQueue != null)
             {
                 conversion1 = conversion1 * 10 + 1;
                 textVisor.Text = conversion1.ToString();
@@ -56,8 +56,41 @@ namespace MyWindowsApplicationBroke
 
         private void equalsSign_Click(object sender, EventArgs e)
         {
-         
-                  
+            try
+            {
+                double spork;
+                
+                while (intQueue.Count > 0)
+                {
+                    
+                    string cheese = symbolQueue.Dequeue();
+                    double tomatos = intQueue.Dequeue();
+                    
+
+                    switch (cheese)
+                    {
+                        case "+":
+                            if (spork == 0)
+                            {
+                                spork = tomatos + intQueue.Dequeue();
+                               
+                            }
+                            break;
+                        case "-":
+                            break;
+                        case "*":
+                            break;
+                        case "/":
+                            break;
+                    }
+                    
+                }
+            }
+                
+            catch (Exception i)
+            {
+                MessageBox.Show(i.Message);
+            }
         }
 
         private void numberTwo_Click(object sender, EventArgs e)
@@ -77,26 +110,16 @@ namespace MyWindowsApplicationBroke
 
         private void numberThree_Click(object sender, EventArgs e)
         {
-            if (secondSwapOn == false && conversion1 == null)
+            if (intQueue == null)
             {
                 conversion1 = 3;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
-            }else if(secondSwapOn == false)
+            }
+            else if (intQueue != null)
             {
                 conversion1 = conversion1 * 10 + 3;
                 textVisor.Text = conversion1.ToString();
-                textVisor.Update();
-            }
-            else if (secondSwapOn == true& conversion2 == null)
-            {
-                conversion2 = 3;
-                textVisor.Text = conversion2.ToString();
-                textVisor.Update();
-            }else if(secondSwapOn == true)
-            {
-                conversion2 = conversion2 * 10 + 3;
-                textVisor.Text = conversion2.ToString();
                 textVisor.Update();
             }
            
@@ -105,112 +128,64 @@ namespace MyWindowsApplicationBroke
 
         private void numberFour_Click(object sender, EventArgs e)
         {
-            if (secondSwapOn == false && conversion1 == null)
+            if (intQueue == null)
             {
                 conversion1 = 4;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
             }
-            else if (secondSwapOn == false)
+            else if (intQueue != null)
             {
-                conversion1 = conversion1 * 10 + 4;
+                conversion1 = conversion1 * 10 +4;
                 textVisor.Text = conversion1.ToString();
-                textVisor.Update();
-            }
-            else if (secondSwapOn == true & conversion2 == null)
-            {
-                conversion2 = 4;
-                textVisor.Text = conversion2.ToString();
-                textVisor.Update();
-            }
-            else if (secondSwapOn == true)
-            {
-                conversion2 = conversion2 * 10 + 4;
-                textVisor.Text = conversion2.ToString();
                 textVisor.Update();
             }
         }
 
         private void numberFive_Click(object sender, EventArgs e)
         {
-            if (secondSwapOn == false && conversion1 == null)
+            if (intQueue == null)
             {
-                conversion1 = 5;
+                conversion1 =5;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
             }
-            else if (secondSwapOn == false)
+            else if (intQueue != null)
             {
                 conversion1 = conversion1 * 10 + 5;
                 textVisor.Text = conversion1.ToString();
-                textVisor.Update();
-            }
-            else if (secondSwapOn == true & conversion2 == null)
-            {
-                conversion2 = 5;
-                textVisor.Text = conversion2.ToString();
-                textVisor.Update();
-            }
-            else if (secondSwapOn == true)
-            {
-                conversion2 = conversion2 * 10 + 5;
-                textVisor.Text = conversion2.ToString();
                 textVisor.Update();
             }
         }
 
         private void numberSix_Click(object sender, EventArgs e)
         {
-            if (secondSwapOn == false && conversion1 == null)
+            if (intQueue == null)
             {
                 conversion1 = 6;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
             }
-            else if (secondSwapOn == false)
+            else if (intQueue != null)
             {
                 conversion1 = conversion1 * 10 + 6;
                 textVisor.Text = conversion1.ToString();
-                textVisor.Update();
-            }
-            else if (secondSwapOn == true & conversion2 == null)
-            {
-                conversion2 = 6;
-                textVisor.Text = conversion2.ToString();
-                textVisor.Update();
-            }
-            else if (secondSwapOn == true)
-            {
-                conversion2 = conversion2 * 10 + 6;
-                textVisor.Text = conversion2.ToString();
                 textVisor.Update();
             }
         }
 
         private void numberSeven_Click(object sender, EventArgs e)
         {
-            if (secondSwapOn == false && conversion1 == null)
+            if (intQueue == null)
             {
                 conversion1 = 7;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
             }
-            else if (secondSwapOn == false)
+            else if (intQueue != null)
             {
                 conversion1 = conversion1 * 10 + 7;
                 textVisor.Text = conversion1.ToString();
-                textVisor.Update();
-            }
-            else if (secondSwapOn == true & conversion2 == null)
-            {
-                conversion2 = 7;
-                textVisor.Text = conversion2.ToString();
-                textVisor.Update();
-            }
-            else if (secondSwapOn == true)
-            {
-                conversion2 = conversion2 * 10 + 7;
-                textVisor.Text = conversion2.ToString();
                 textVisor.Update();
             }
         }
@@ -227,58 +202,32 @@ namespace MyWindowsApplicationBroke
 
         private void numberEight_Click(object sender, EventArgs e)
         {
-             if (secondSwapOn == false && conversion1 == null)
+            if (intQueue == null)
             {
                 conversion1 = 8;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
             }
-            else if (secondSwapOn == false)
+            else if (intQueue != null)
             {
                 conversion1 = conversion1 * 10 + 8;
                 textVisor.Text = conversion1.ToString();
-                textVisor.Update();
-            }
-            else if (secondSwapOn == true & conversion2 == null)
-            {
-                conversion2 = 8;
-                textVisor.Text = conversion2.ToString();
-                textVisor.Update();
-            }
-            else if (secondSwapOn == true)
-            {
-                conversion2 = conversion2 * 10 + 8;
-                textVisor.Text = conversion2.ToString();
                 textVisor.Update();
             }
         }
 
         private void numberNine_Click(object sender, EventArgs e)
         {
-        if (secondSwapOn == false && conversion1 == null)
+            if (intQueue == null)
             {
                 conversion1 = 9;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
-                
             }
-            else if (secondSwapOn == false)
+            else if (intQueue != null)
             {
                 conversion1 = conversion1 * 10 + 9;
                 textVisor.Text = conversion1.ToString();
-                textVisor.Update();
-               
-            }
-            else if (secondSwapOn == true & conversion2 == null)
-            {
-                conversion2 = 9;
-                textVisor.Text = conversion2.ToString();
-                textVisor.Update();
-            }
-            else if (secondSwapOn == true)
-            {
-                conversion2 = conversion2 * 10 + 9;
-                textVisor.Text = conversion2.ToString();
                 textVisor.Update();
             }
         }
@@ -311,7 +260,7 @@ namespace MyWindowsApplicationBroke
 
         private void textVisor_TextChanged(object sender, EventArgs e)
         {
-          
+            conversion1 = Double.Parse(textVisor.Text);
         }
             
 
