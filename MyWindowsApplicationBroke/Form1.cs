@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics.Contracts;
 
 namespace MyWindowsApplicationBroke
 {
@@ -22,6 +23,8 @@ namespace MyWindowsApplicationBroke
         public int switchHolder;
         public bool secondSwapOn;
         public string lastSymbol;
+
+     
 
 
 
@@ -58,7 +61,10 @@ namespace MyWindowsApplicationBroke
         {
             try
             {
-                double spork;
+               
+                double spork =0;
+                intQueue.Enqueue(conversion1);
+                conversion1 = 0;
                 
                 while (intQueue.Count > 0)
                 {
@@ -75,6 +81,11 @@ namespace MyWindowsApplicationBroke
                                 spork = tomatos + intQueue.Dequeue();
                                
                             }
+                            else
+                            {
+                                spork = spork + intQueue.Dequeue();
+                            }
+                            
                             break;
                         case "-":
                             break;
@@ -84,7 +95,11 @@ namespace MyWindowsApplicationBroke
                             break;
                     }
                     
-                }
+                } 
+                textVisor.Text = spork.ToString();
+                
+                            textVisor.Update();
+                            conversion1 = spork;
             }
                 
             catch (Exception i)
@@ -193,6 +208,7 @@ namespace MyWindowsApplicationBroke
         private void additionSign_Click(object sender, EventArgs e)
         {
             symbolQueue.Enqueue("+");
+            intQueue = new Queue<double>();
             intQueue.Enqueue(conversion1);
             textVisor.Text = conversion1 + "+";
             conversion1 = 0;
@@ -260,7 +276,24 @@ namespace MyWindowsApplicationBroke
 
         private void textVisor_TextChanged(object sender, EventArgs e)
         {
-            conversion1 = Double.Parse(textVisor.Text);
+            conversion1 = double.Parse(textVisor.Text);
+           
+            for (int ilk = 0; ilk < textVisor.Text.Length; ilk++)
+            {
+                if (textVisor.Text.Contains("*+-/"))
+                {
+                    textVisor.Text.
+                }
+                
+               
+              
+
+             
+
+            }
+
+           
+
         }
             
 
