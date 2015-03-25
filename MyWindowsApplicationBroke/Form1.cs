@@ -282,7 +282,37 @@ namespace MyWindowsApplicationBroke
             {
                 if (textVisor.Text.Contains("*+-/"))
                 {
-                    textVisor.Text.
+                    string textConv = textVisor.Text;
+                    char[] c;
+                    c = textConv.ToArray<char>(); 
+                    if (char.IsSymbol(c[ilk]))
+                    {
+                    if (c[ilk] == (char)42)
+                    {
+                        symbolQueue.Enqueue("*");
+                    }else if ( c[ilk] == (char)43)
+                    {
+                        symbolQueue.Enqueue("+");
+                    }else if (c[ilk] == (char)47)
+                    {
+                        symbolQueue.Enqueue("/");
+                    }else if (c[ilk] == (char)45)
+                    {
+                        symbolQueue.Enqueue("-");
+                    }else if (char.IsWhiteSpace(c[ilk]))
+                    {
+                        MessageBox.Show("Sorry, but WhiteSpace is not allowed. Try again please?");
+                        return;
+                    }
+                    }
+                    else if (char.IsNumber(c[ilk]))
+                    {
+                        intQueue.Enqueue(c[ilk]);
+                    }
+                   
+                   
+                   
+                  
                 }
                 
                
