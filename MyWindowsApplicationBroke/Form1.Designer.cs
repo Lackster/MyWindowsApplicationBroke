@@ -35,7 +35,6 @@
             this.negativeSign = new System.Windows.Forms.Button();
             this.numberFive = new System.Windows.Forms.Button();
             this.divisionSign = new System.Windows.Forms.Button();
-            this.numberThree = new System.Windows.Forms.Button();
             this.numberEight = new System.Windows.Forms.Button();
             this.numberSeven = new System.Windows.Forms.Button();
             this.numberSix = new System.Windows.Forms.Button();
@@ -44,6 +43,8 @@
             this.textVisor = new System.Windows.Forms.TextBox();
             this.conversionBox = new System.Windows.Forms.ComboBox();
             this.Clear = new System.Windows.Forms.Button();
+            this.numberThree = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // numberOne
@@ -115,16 +116,6 @@
             this.divisionSign.Text = "/";
             this.divisionSign.UseVisualStyleBackColor = true;
             this.divisionSign.Click += new System.EventHandler(this.divisionSign_Click);
-            // 
-            // numberThree
-            // 
-            this.numberThree.Location = new System.Drawing.Point(118, 184);
-            this.numberThree.Name = "numberThree";
-            this.numberThree.Size = new System.Drawing.Size(47, 41);
-            this.numberThree.TabIndex = 4;
-            this.numberThree.Text = "3";
-            this.numberThree.UseVisualStyleBackColor = true;
-            this.numberThree.Click += new System.EventHandler(this.numberThree_Click);
             // 
             // numberEight
             // 
@@ -203,11 +194,31 @@
             this.Clear.UseVisualStyleBackColor = true;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
+            // numberThree
+            // 
+            this.numberThree.Location = new System.Drawing.Point(12, 231);
+            this.numberThree.Name = "numberThree";
+            this.numberThree.Size = new System.Drawing.Size(47, 41);
+            this.numberThree.TabIndex = 4;
+            this.numberThree.Text = "0";
+            this.numberThree.UseVisualStyleBackColor = true;
+            this.numberThree.Click += new System.EventHandler(this.numberThree_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(118, 184);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(47, 41);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "3";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 261);
+            this.ClientSize = new System.Drawing.Size(373, 302);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Clear);
             this.Controls.Add(this.conversionBox);
             this.Controls.Add(this.textVisor);
@@ -241,7 +252,6 @@
         private System.Windows.Forms.Button negativeSign;
         private System.Windows.Forms.Button numberFive;
         private System.Windows.Forms.Button divisionSign;
-        private System.Windows.Forms.Button numberThree;
         private System.Windows.Forms.Button numberEight;
         private System.Windows.Forms.Button numberSeven;
         private System.Windows.Forms.Button numberSix;
@@ -250,6 +260,8 @@
         private System.Windows.Forms.TextBox textVisor;
         private System.Windows.Forms.ComboBox conversionBox;
         private System.Windows.Forms.Button Clear;
+        private System.Windows.Forms.Button numberThree;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -23,6 +23,7 @@ namespace MyWindowsApplicationBroke
         public int switchHolder;
         public bool secondSwapOn;
         public string lastSymbol;
+        public bool PGA = false;
 
      
 
@@ -39,12 +40,14 @@ namespace MyWindowsApplicationBroke
         {
             if (intQueue == null)
             {
+                PGA = true;
                 conversion1 = 1;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
             }
             else if (intQueue != null)
             {
+                PGA = true;
                 conversion1 = conversion1 * 10 + 1;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
@@ -94,8 +97,8 @@ namespace MyWindowsApplicationBroke
                         case "/":
                             break;
                     }
-                    
-                } 
+
+                } PGA = true;
                 textVisor.Text = spork.ToString();
                 
                             textVisor.Update();
@@ -112,11 +115,13 @@ namespace MyWindowsApplicationBroke
         {
            if (intQueue == null)
            {
+               PGA = true;
                conversion1 = 2;
                textVisor.Text = conversion1.ToString();
                textVisor.Update();
            }else if (intQueue != null)
            {
+               PGA = true;
                conversion1 = conversion1 * 10 + 2;
                textVisor.Text = conversion1.ToString();
                textVisor.Update();
@@ -127,12 +132,14 @@ namespace MyWindowsApplicationBroke
         {
             if (intQueue == null)
             {
+                PGA = true;
                 conversion1 = 3;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
             }
             else if (intQueue != null)
             {
+                PGA = true;
                 conversion1 = conversion1 * 10 + 3;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
@@ -145,12 +152,15 @@ namespace MyWindowsApplicationBroke
         {
             if (intQueue == null)
             {
+                PGA = true;
                 conversion1 = 4;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
             }
             else if (intQueue != null)
+            
             {
+                PGA = true;
                 conversion1 = conversion1 * 10 +4;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
@@ -161,12 +171,14 @@ namespace MyWindowsApplicationBroke
         {
             if (intQueue == null)
             {
+                PGA = true;
                 conversion1 =5;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
             }
             else if (intQueue != null)
             {
+                PGA = true;
                 conversion1 = conversion1 * 10 + 5;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
@@ -177,12 +189,14 @@ namespace MyWindowsApplicationBroke
         {
             if (intQueue == null)
             {
+                PGA = true;
                 conversion1 = 6;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
             }
             else if (intQueue != null)
             {
+                PGA = true;
                 conversion1 = conversion1 * 10 + 6;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
@@ -193,12 +207,14 @@ namespace MyWindowsApplicationBroke
         {
             if (intQueue == null)
             {
+                PGA = true;
                 conversion1 = 7;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
             }
             else if (intQueue != null)
             {
+                PGA = true;
                 conversion1 = conversion1 * 10 + 7;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
@@ -207,6 +223,7 @@ namespace MyWindowsApplicationBroke
 
         private void additionSign_Click(object sender, EventArgs e)
         {
+            PGA = true;
             symbolQueue.Enqueue("+");
             intQueue = new Queue<double>();
             intQueue.Enqueue(conversion1);
@@ -220,12 +237,14 @@ namespace MyWindowsApplicationBroke
         {
             if (intQueue == null)
             {
+                PGA = true;
                 conversion1 = 8;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
             }
             else if (intQueue != null)
             {
+                PGA = true;
                 conversion1 = conversion1 * 10 + 8;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
@@ -236,12 +255,14 @@ namespace MyWindowsApplicationBroke
         {
             if (intQueue == null)
             {
+                PGA = true;
                 conversion1 = 9;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
             }
             else if (intQueue != null)
             {
+                PGA = true;
                 conversion1 = conversion1 * 10 + 9;
                 textVisor.Text = conversion1.ToString();
                 textVisor.Update();
@@ -250,6 +271,7 @@ namespace MyWindowsApplicationBroke
 
         private void negativeSign_Click(object sender, EventArgs e)
         {
+            PGA = true;
             symbolQueue.Enqueue("-");
             lastSymbol = "-";
             textVisor.Clear();
@@ -264,7 +286,7 @@ namespace MyWindowsApplicationBroke
 
         private void Clear_Click(object sender, EventArgs e)
         {
-            
+            PGA = true;
               textVisor.Text = null;
         conversion1 = 0;
         conversion2 = 0;
@@ -276,8 +298,9 @@ namespace MyWindowsApplicationBroke
 
         private void textVisor_TextChanged(object sender, EventArgs e)
         {
-            conversion1 = double.Parse(textVisor.Text);
            
+          if (PGA = false)  
+              conversion1 = double.Parse(textVisor.Text);
             for (int ilk = 0; ilk < textVisor.Text.Length; ilk++)
             {
                 if (textVisor.Text.Contains("*+-/"))
@@ -309,7 +332,7 @@ namespace MyWindowsApplicationBroke
                     {
                         intQueue.Enqueue(c[ilk]);
                     }
-                   
+                  PGA = false;
                    
                    
                   
@@ -323,6 +346,11 @@ namespace MyWindowsApplicationBroke
             }
 
            
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
 
         }
             
